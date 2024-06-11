@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris</title>
+    <style>
+        body {
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #game {
+            border: 2px solid #fff;
+            image-rendering: pixelated;
+        }
+        #scoreBoard {
+            color: white;
+            font-family: 'Arial', sans-serif;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        #controls {
+            position: absolute;
+            bottom: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        .button {
+            background-color: #333;
+            border: 2px solid #fff;
+            color: white;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+        }
+        .button:hover {
+            background-color: #555;
+        }
+        #gameOverPopup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid white;
+        }
+        #gameOverPopup button {
+            margin-top: 10px;
+            background-color: #333;
+            border: 2px solid #fff;
+            color: white;
+            width: 100px;
+            height: 40px;
+            font-size: 20px;
+        }
+        #gameOverPopup button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="game" width="300" height="600"></canvas>
+    <div id="scoreBoard">Score: <span id="score">0</span></div>
+    <div id="controls">
+        <div id="left" class="button">&#9664;</div>
+        <div id="rotate" class="button">&#8635;</div>
+        <div id="right" class="button">&#9654;</div>
+        <div id="down" class="button">&#9660;</div>
+    </div>
+    <div id="gameOverPopup">
+        <h2>Game Over</h2>
+        <button id="restart">Restart</button>
+    </div>
+    <script src="tetris.js"></script>
+</body>
+</html>
